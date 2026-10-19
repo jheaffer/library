@@ -18,6 +18,8 @@ builder.Services.AddSingleton(dataSource);
 // Repositories: one new object per web request.
 builder.Services.AddScoped<BookRepository>();
 
+builder.Services.AddScoped<MemberRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
