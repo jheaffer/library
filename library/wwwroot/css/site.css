@@ -1,27 +1,33 @@
 /* ==========================================================================
-   Complete IT Student Dark Theme & Modern UI Styles (wwwroot/css/site.css)
+   Complete Fixed IT Student Dark Theme & Modern UI Styles
    ========================================================================== */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 body {
     background-color: #0f172a;
     color: #e2e8f0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* --- Navbar Fix (Dark Theme & Visible Text) --- */
+/* --- Navbar (Dark Theme & Visible Text) --- */
 .navbar, header nav, .navbar.bg-white {
     background-color: #1e293b !important;
     border-bottom: 1px solid #334155 !important;
 }
 
-.navbar-light .navbar-brand,
-.navbar-light .navbar-nav .nav-link,
 .navbar-brand,
 .nav-link {
     color: #f8fafc !important;
 }
 
-    .navbar-light .navbar-nav .nav-link:hover,
     .nav-link:hover {
         color: #38bdf8 !important;
     }
@@ -33,31 +39,44 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     color: #e2e8f0;
+    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
-/* --- Tables --- */
+/* --- Tables & High-Contrast Text --- */
 .table {
-    color: #e2e8f0;
+    color: #f8fafc !important;
     margin-bottom: 0;
 }
 
     .table th {
         background-color: #0f172a !important;
-        color: #94a3b8;
+        color: #94a3b8 !important;
         text-transform: uppercase;
         font-size: 0.75rem;
         letter-spacing: 0.05em;
-        border-bottom: 1px solid #334155;
+        border-bottom: 1px solid #334155 !important;
     }
 
     .table td {
-        border-bottom: 1px solid #334155;
+        color: #f8fafc !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid #334155 !important;
         vertical-align: middle;
     }
 
-.table-hover tbody tr:hover {
-    background-color: #273548;
-    color: #ffffff;
+        .table td .text-muted {
+            color: #94a3b8 !important;
+        }
+
+.table-hover tbody tr:hover td {
+    background-color: rgba(56, 189, 248, 0.08) !important;
+    color: #ffffff !important;
+}
+
+.table-responsive {
+    margin-bottom: 0;
+    border-radius: inherit;
 }
 
 /* --- Form Inputs --- */
@@ -89,4 +108,20 @@ body {
     .btn-primary:hover {
         background-color: #0284c7;
         border-color: #0284c7;
+    }
+
+/* --- Footer --- */
+footer.footer {
+    background-color: #1e293b !important;
+    border-top: 1px solid #334155 !important;
+    color: #94a3b8 !important;
+    text-align: left;
+    padding: 1rem 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+    footer.footer a {
+        color: #38bdf8 !important;
+        text-decoration: none;
     }

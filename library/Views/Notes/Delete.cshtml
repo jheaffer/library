@@ -1,0 +1,35 @@
+﻿@model Note
+@{
+    ViewData["Title"] = "Delete Note";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 p-4 border-top border-danger border-4">
+                <h2 class="fw-bold text-danger mb-1">Delete Note</h2>
+                <p class="text-muted small mb-4">Are you sure you want to delete this note?</p>
+
+                <div class="bg-dark bg-opacity-50 rounded-3 p-3 mb-4 border border-secondary">
+                    <dl class="row mb-0">
+                        <dt class="col-4 text-muted small text-uppercase">Title</dt>
+                        <dd class="col-8 fw-bold text-light mb-2">@Model.Title</dd>
+
+                        <dt class="col-4 text-muted small text-uppercase">Body</dt>
+                        <dd class="col-8 text-light mb-2">@(Model.Body ?? "—")</dd>
+
+                        <dt class="col-4 text-muted small text-uppercase">Created</dt>
+                        <dd class="col-8 text-light mb-0">@Model.CreatedOn.ToString("yyyy-MM-dd")</dd>
+                    </dl>
+                </div>
+
+                <form asp-action="Delete" asp-route-id="@Model.NoteId" method="post">
+                    <div class="d-flex align-items-center gap-3">
+                        <button type="submit" class="btn btn-danger btn-lg px-4 rounded-pill fw-semibold shadow-sm">Delete</button>
+                        <a asp-action="Index" class="btn btn-link text-decoration-none text-muted fw-semibold">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
