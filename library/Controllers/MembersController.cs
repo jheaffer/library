@@ -77,12 +77,36 @@ public class MembersController : Controller
         return View(member);
     }
 
-    // POST /Members/Delete/5
+    // POST /Members/Delete/5 : the delete was confirmed.
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(long id)
     {
-        await _members.DeleteAsync(id);
+        try
+        {
+            // 1. Delete the member.
+            await _members.DeleteAsync(id);
+        }
+        catch (PostgresException ex) when (ex.SqlState == PostgresErrorCodes.ForeignKeyViolation) // 2
+        {
+            // 3. Load the member again, to show them on the page.
+            var member = await _members.GetByIdAsync(id);
+
+            if (member == null) // 4
+            {
+                // 5. Answer "not found".
+                return NotFound();
+            }
+
+            // 6. Set the message the page will show.
+            ViewBag.Error = "This member has loans on record, so the database will not delete them.";
+
+            // 7. Show the Delete page again, with the member.
+            return View("Delete", member);
+        }
+
+        // 8. The member was deleted: go back to the list.
         return RedirectToAction(nameof(Index));
     }
+
 }
