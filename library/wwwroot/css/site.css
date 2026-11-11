@@ -1,14 +1,13 @@
 /* ==========================================================================
-   Complete Fixed IT Student Dark Theme & Modern UI Styles
+   Modern IT Dark Theme & Sleek Catalogue UI
    ========================================================================== */
-
 html {
     position: relative;
     min-height: 100%;
 }
 
 body {
-    background-color: #0f172a;
+    background-color: #0b0f19;
     color: #e2e8f0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     display: flex;
@@ -17,106 +16,179 @@ body {
     margin: 0;
 }
 
-/* --- Navbar (Dark Theme & Visible Text) --- */
-.navbar, header nav, .navbar.bg-white {
-    background-color: #1e293b !important;
-    border-bottom: 1px solid #334155 !important;
+/* --- Navigation Bar --- */
+.navbar, header nav {
+    background-color: #111827 !important;
+    border-bottom: 1px solid #1f2937 !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
 }
 
-.navbar-brand,
-.nav-link {
-    color: #f8fafc !important;
+.navbar-brand, .nav-link {
+    color: #f3f4f6 !important;
+    font-weight: 500;
 }
 
     .nav-link:hover {
         color: #38bdf8 !important;
     }
 
-/* --- Modern Cards --- */
+/* --- Page Header Layout --- */
+.container {
+    max-width: 1200px;
+}
+
+/* Transform the top section to have the "Add Book" button in the header */
+h2, .display-6, h1 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #f9fafb;
+}
+
+/* --- Modern Card Containers --- */
 .card {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
     color: #e2e8f0;
     overflow: hidden;
     margin-bottom: 2rem;
 }
 
-/* --- Tables & High-Contrast Text --- */
+/* --- Sleek Custom Tables --- */
 .table {
-    color: #f8fafc !important;
+    color: #f3f4f6 !important;
     margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
     .table th {
         background-color: #0f172a !important;
-        color: #94a3b8 !important;
+        color: #9ca3af !important;
         text-transform: uppercase;
-        font-size: 0.75rem;
-        letter-spacing: 0.05em;
-        border-bottom: 1px solid #334155 !important;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        padding: 1rem 1.25rem;
+        border-bottom: 2px solid #1f2937 !important;
     }
 
     .table td {
-        color: #f8fafc !important;
+        color: #e5e7eb !important;
         background-color: transparent !important;
-        border-bottom: 1px solid #334155 !important;
+        padding: 1.15rem 1.25rem;
+        border-bottom: 1px solid #1f2937 !important;
         vertical-align: middle;
     }
 
-        .table td .text-muted {
-            color: #94a3b8 !important;
-        }
-
-.table-hover tbody tr:hover td {
-    background-color: rgba(56, 189, 248, 0.08) !important;
-    color: #ffffff !important;
+.table-hover tbody tr {
+    transition: background-color 0.15s ease;
 }
+
+    .table-hover tbody tr:hover td {
+        background-color: rgba(56, 189, 248, 0.05) !important;
+        color: #ffffff !important;
+    }
 
 .table-responsive {
-    margin-bottom: 0;
-    border-radius: inherit;
+    border-radius: 16px;
+    border: 1px solid #1f2937;
+    background-color: #111827;
 }
+
+/* --- Category Badges (Pills) --- */
+.table td .badge, .badge {
+    background-color: #1e293b !important;
+    color: #38bdf8 !important;
+    border: 1px solid #334155;
+    font-weight: 500;
+    padding: 0.4em 0.8em;
+    border-radius: 50rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.025em;
+}
+
+/* --- Buttons & Action Grouping --- */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+        box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+        transform: translateY(-1px);
+    }
+
+/* Fix row action buttons (Edit/Delete) */
+.table td .btn, .btn-sm {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    margin-right: 0.35rem;
+}
+
+.btn-warning, .btn-outline-warning {
+    background-color: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    color: #facc15;
+}
+
+    .btn-warning:hover {
+        background-color: #eab308;
+        color: #000;
+    }
+
+.btn-danger, .btn-outline-danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+    .btn-danger:hover {
+        background-color: #ef4444;
+        color: #fff;
+    }
 
 /* --- Form Inputs --- */
 .form-control, .form-select {
-    background-color: #0f172a;
-    border: 1px solid #475569;
-    color: #f8fafc;
+    background-color: #0b0f19;
+    border: 1px solid #334155;
+    color: #f3f4f6;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
 }
 
     .form-control:focus, .form-select:focus {
-        background-color: #0f172a;
+        background-color: #0b0f19;
         border-color: #38bdf8;
-        color: #f8fafc;
-        box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25);
+        color: #f3f4f6;
+        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
     }
 
 .form-label {
     color: #94a3b8;
     font-weight: 600;
+    font-size: 0.9rem;
 }
-
-/* --- Buttons --- */
-.btn-primary {
-    background-color: #0ea5e9;
-    border-color: #0ea5e9;
-    font-weight: 600;
-}
-
-    .btn-primary:hover {
-        background-color: #0284c7;
-        border-color: #0284c7;
-    }
 
 /* --- Footer --- */
 footer.footer {
-    background-color: #1e293b !important;
-    border-top: 1px solid #334155 !important;
-    color: #94a3b8 !important;
+    background-color: #111827 !important;
+    border-top: 1px solid #1f2937 !important;
+    color: #9ca3af !important;
     text-align: left;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     margin-top: auto;
     width: 100%;
 }
@@ -125,22 +197,3 @@ footer.footer {
         color: #38bdf8 !important;
         text-decoration: none;
     }
-
-/* --- True Notepad Memo Styling --- */
-.notepad-card {
-    background-color: #1e293b !important;
-    border-left: 4px solid #38bdf8 !important; /* Developer blue binding strip */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-    .notepad-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.2) !important;
-    }
-
-.notepad-body {
-    background-color: #0f172a !important;
-    border: 1px dashed #334155;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
