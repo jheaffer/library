@@ -8,7 +8,6 @@
         <h1 class="mb-0 text-white">Books</h1>
         <p class="text-white mb-0">@Model.Count books in the catalogue</p>
     </div>
-    <!-- Task 9: Add a book button placed cleanly in the header -->
     <a asp-action="Create" class="btn btn-primary">
         <i class="bi bi-plus-lg"></i> Add a book
     </a>
@@ -31,11 +30,11 @@
                 {
                     <tr>
                         <td class="text-end font-monospace text-muted">@book.BookId</td>
-                        <td class="fw-semibold">@book.Title</td>
+                        <td class="fw-semibold text-white">@book.Title</td>
                         <td>
                             <span class="badge">@(book.Category ?? "—")</span>
                         </td>
-                        <td class="text-end">@(book.Price?.ToString("N2") ?? "—")</td>
+                        <td class="text-white-50 text-end">@(book.Price?.ToString("N2") ?? "—")</td>
                         <td class="text-end">
                             <a asp-action="Edit" asp-route-id="@book.BookId" class="btn btn-sm btn-outline-warning">Edit</a>
                             <a asp-action="Delete" asp-route-id="@book.BookId" class="btn btn-sm btn-outline-danger">Delete</a>

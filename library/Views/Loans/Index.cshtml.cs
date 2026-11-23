@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace library.Views.Members
+namespace library.Views.Loans
 {
-    public class IndexModel : PageModel
+    public class LoansIndexModel : PageModel
     {
         public void OnGet()
         {

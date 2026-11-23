@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace library.Views.Notes
 {
-    public class IndexModel : PageModel
+    public class NotesIndexModel : PageModel
     {
         public void OnGet()
         {
