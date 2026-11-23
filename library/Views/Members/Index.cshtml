@@ -22,7 +22,9 @@
                     <th>Full Name</th>
                     <th>Email</th>
                     <th>Member Type</th>
-                    <th class="text-end" style="width:12rem">Actions</th>
+                    <th class="text-end text-nowrap">Books Out</th>
+                    <th class="text-end" style="width:15rem">Actions</th>
+                    <th class="text-end">Books out</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,11 +37,13 @@
                             <span class="badge">@(member.Email ?? "—")</span>
                         </td>
                         <td class="text-white-50">@member.MemberType</td>
-                        <td class="text-end">
+                        <td class="text-end text-white">@member.OpenLoans</td>
+                        <td class="text-end text-nowrap">
                             <a asp-action="Details" asp-route-id="@member.MemberId" class="btn btn-sm btn-outline-primary">Loans</a>
                             <a asp-action="Edit" asp-route-id="@member.MemberId" class="btn btn-sm btn-outline-warning">Edit</a>
                             <a asp-action="Delete" asp-route-id="@member.MemberId" class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
+                        <td class="text-end">@member.OpenLoans</td>
                     </tr>
                 }
             </tbody>
