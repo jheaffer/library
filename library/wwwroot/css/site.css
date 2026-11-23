@@ -197,3 +197,43 @@ footer.footer {
         color: #38bdf8 !important;
         text-decoration: none;
     }
+
+/* ==========================================================================
+   Unique "Library Book Ledger" Theme Enhancements
+   ========================================================================== */
+
+/* Give the Books container a classic leather-bound binder look */
+body.books-page-theme,
+.table-responsive:has(th:contains("Title")) {
+    position: relative;
+}
+
+/* Adds a subtle gold/bronze spine accent line to the left of the books table card */
+.card:has(th:contains("Title")) {
+    border-left: 5px solid #d97706 !important; /* Warm antique gold book spine */
+    background: linear-gradient(145deg, #111827 0%, #0d1322 100%);
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+    /* Style book category badges to look like classic library index tags */
+    .card:has(th:contains("Title")) .badge {
+        background-color: rgba(217, 119, 6, 0.15) !important;
+        color: #fbbf24 !important;
+        border: 1px solid rgba(217, 119, 6, 0.3);
+        font-family: 'Segoe UI', monospace;
+        letter-spacing: 0.05em;
+    }
+
+    /* Give book table title rows a classic typography styling */
+    .card:has(th:contains("Title")) tbody tr td:nth-child(2) {
+        font-family: 'Georgia', serif; /* Classic book typography feel */
+        letter-spacing: 0.01em;
+        color: #fef3c7 !important;
+    }
+
+    /* Price column styling mimicking a library ledger valuation */
+    .card:has(th:contains("Title")) tbody tr td:nth-child(4) {
+        font-family: monospace;
+        color: #34d399 !important; /* Mint ledger green */
+        font-weight: 600;
+    }
