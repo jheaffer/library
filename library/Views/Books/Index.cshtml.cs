@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace library.Views.Books
 {
-    public class IndexModel : PageModel
+    public class BooksIndexModel : PageModel
     {
         public void OnGet()
         {
